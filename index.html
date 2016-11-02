@@ -10,24 +10,13 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
+      <!--row 1-->
+      <div class="row" id="row1">
         <div class="col-md-8">
           <h1>Let's play Pig Dice!</h1>
           <img src="img/dice.png" alt="image of dice">
-
-          <form class="" id="startGame">
-            <!-- <label for="playersNumber">Enter the Number of Players:</label>
-            <input type="number" id="playersNumber"> -->
-            <button type="submit" id="submitFormButton">Start Game</button>
-
-          </form>
-
-
-          <button type="button" id="rollButton">Roll</button>
-          <button type="button" id="holdButton">Hold</button>
-        </div><!--end of 8 column-->
+        </div>
         <div class="col-md-4">
-
           <div class="barRight">
             <h3>Rules</h3>
             <ul>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
@@ -37,28 +26,70 @@
             </ul>
             <h3>The first player to score 100 or more points <strong>wins!</strong></h3>
           </div>
-        </div><!--end of 4 column-->
-
+        </div>
       </div><!--end row 1-->
+      <!--row 2-->
+      <div class="row" id="row2">
+        <div class="col-md-4">
+
+          <form class="" id="startGame">
+            <!-- <label for="playersNumber">Enter the Number of Players:</label>
+            <input type="number" id="playersNumber"> -->
+            <label for="player1NameInput">Enter Player 1:</label>
+            <input type="text" id="player1NameInput"><br>
+            <label for="player2NameInput">Enter Player 2:</label>
+            <input type="text" id="player2NameInput"><br>
+            <label for="player3NameInput">Enter Player 3:</label>
+            <input type="text" id="player3NameInput"><br>
+            <label for="player4NameInput">Enter Player 4:</label>
+            <input type="text" id="player4NameInput"><br>
+
+            <button type="submit" id="submitFormButton">Start Game</button>
+
+          </form>
+
+
+        </div><!--end of column 1-->
+        <div class="col-md-4">
+          <button type="button" id="rollButton">Roll</button>
+          <button type="button" id="holdButton">Hold</button>
+
+        </div><!--end of column 2-->
+      </div><!--end row 2-->
       <div class="row">
         <div class="col-md-4" id="turnScoreDisplay">
-          <h3>Current Turn Score:</h3>
+          <h1>Current Player: <span id="currentPlayer"></span></h1>
+          <h3>Current Turn Score:<span id="currentTurnScore"></span></h3>
           <ol id="currentTurn">
           </ol>
         </div>
-        <div class="col-md-4" id="player1ScoreDisplay">
-          <h3>Player 1 Total Score:</h3>
-          <ol id="player1">
-          </ol>
+        <div class="col-md-8" id="playerScoreDisplay">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Player 1 Total Score:</h3>
+              <ol id="player1">
+              </ol>
+            </div>
+            <div class="col-md-6" id="player2ScoreDisplay">
+              <h3>Player 2 Total Score:</h3>
+              <ol id="player2">
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" id="player4ScoreDisplay">
+              <h3>Player 3 Total Score:</h3>
+              <ol id="player1">
+              </ol>
+            </div>
+            <div class="col-md-6" id="player4ScoreDisplay">
+              <h3>Player 4 Total Score:</h3>
+              <ol id="player2">
+              </ol>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4" id="player2ScoreDisplay">
-          <h3>Player 2 Total Score:</h3>
-          <ol id="player2">
-          </ol>
-        </div>
-
       </div>
     </div>
-
   </body>
 </html>
