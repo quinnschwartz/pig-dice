@@ -20,8 +20,6 @@ Game = function(player1, player2, player3, player4) {
   this.players = [player1, player2, player3, player4];
 }
 
-
-
 var rollDie = function() {
   return Math.ceil(Math.random() * 6);
 }
