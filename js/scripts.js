@@ -47,6 +47,7 @@ $(document).ready(function() {
     var result = rollDie();
     console.log(currentPlayer)
     if (result === 1) {
+      $("span#currentPlayerDisplay").text(currentPlayer);
       $("ol#currentTurn").append("<li>" + result + "</li>  <h3>Too Greedy, score 0 this turn! Next player, you're up!</h3>");
       subTotal = 0;
       currentPlayer += 1;
@@ -80,10 +81,23 @@ $(document).ready(function() {
       player4Total += subTotal;
       $("span#player4ScoreDisplay").text(player4Total);
     }
-    subTotal = 0;
+  if (player1Total > 100 || player2Total > 100 || player3Total > 100 || player4Total > 100) {
+    alert("Player" + currentPlayer + "wins!");
+    player1Total = 0;
+    player2Total = 0;
+    player3Total = 0;
+    player4Total = 0;
+    $("span#player1ScoreDisplay").text(player1Total);
+    $("span#player2ScoreDisplay").text(player2Total);
+    $("span#player3ScoreDisplay").text(player3Total);
+    $("span#player4ScoreDisplay").text(player4Total);
+    currentPlayer = 1;
+  } else {
     currentPlayer += 1;
+    subTotal = 0;
     if (currentPlayer > 4) {
       currentPlayer = 1;
     }
+  }
   });
 });
