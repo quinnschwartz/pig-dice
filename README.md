@@ -20,11 +20,11 @@ out: 5, 2, 3, 1-TOO GREEDY YOURE out
 in: (subtotal 24: 6, 6, 4, 3, 5), click hold button
 out: (subtotal 0: ), player Total Score: 24
 
-5) if there are multiple players, the next player in order starts their turn and the process is repeated.
+5) *DONE* if there are multiple players, the next player in order starts their turn and the process is repeated.
 in: click hold button OR click roll button and roll 1
 out: Player 2 Current Turn Score: (subtotal 0: )
 
-6) when a player's total reaches 100 or more the game is over and a happy pig image is displayed.
+6) *DONE* when a player's total reaches 100 or more the game is over and a happy pig image is displayed.
 in: player X total score >= 100
 out: PLAYER X WINS OINK OINK
 
