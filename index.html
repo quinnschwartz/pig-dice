@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pig Dice</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Let's play Pig Dice!</h1>
+          <img src="img/dice.png" alt="image of dice">
+
+          <form class="" id="startGame">
+            <!-- <label for="playersNumber">Enter the Number of Players:</label>
+            <input type="number" id="playersNumber"> -->
+            <button type="submit" id="submitFormButton">Start Game</button>
+
+          </form>
+
+
+          <button type="button" id="rollButton">Roll</button>
+          <button type="button" id="holdButton">Hold</button>
+        </div><!--end of 8 column-->
+        <div class="col-md-4">
+
+          <div class="barRight">
+            <h3>Rules</h3>
+            <ul>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+              <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+              <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+              <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+            </ul>
+            <h3>The first player to score 100 or more points <strong>wins!</strong></h3>
+          </div>
+        </div><!--end of 4 column-->
+
+      </div><!--end row 1-->
+      <div class="row">
+        <div class="col-md-12" id="scoresDisplay">
+          <ol id="player1">
+          </ol>
+          <ol id="player2">
+          </ol>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
