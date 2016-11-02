@@ -4,9 +4,9 @@ Spec List
 
 1) if the player hits the "roll" button a random number from 1-6 is returned.
 
-2) that number is added to the turn score unless it's 1.
+2) that number is added to the turn score.
 
-3) if it's 1, the turn score becomes zero and the turn is over.
+3) If it's 1, the turn score resets and the turn is over.
 
 4) if the user hits the "hold" button then their turn score is added to their total score and the turn is over.
 

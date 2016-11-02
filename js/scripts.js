@@ -11,7 +11,12 @@ $(document).ready(function() {
     // var numberOfPlayers = $("input#playersNumber").val();
   });
   $("button#rollButton").click(function(event) {
-    alert(rollDie());
+  var result = rollDie();
+  if (result === 1) {
+  $("ol#currentTurn").append("<li>" + result + "</li>  <h3>Too Greedy, score 0 this turn!</h3>");
+  } else {
+  $("ol#currentTurn").append("<li>" + result + "</li>");
+  }
 
   });
 });
