@@ -1,5 +1,7 @@
 //backend
-rollDie
+var rollDie = function() {
+  return Math.ceil(Math.random() * 6);
+}
 
 //frontend
 $(document).ready(function() {
@@ -9,6 +11,7 @@ $(document).ready(function() {
     // var numberOfPlayers = $("input#playersNumber").val();
   });
   $("button#rollButton").click(function(event) {
-    
+    alert(rollDie());
+
   });
 });
