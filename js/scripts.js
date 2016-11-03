@@ -1,22 +1,24 @@
 //backend
 
-//variables
+//Global Variables
 
   var subTotal = 0;
   var player1Total = 0;
   var player2Total = 0;
   var currentPlayer = 1;
 
-//functions
+//Constructors/ Parameters
 
-Player = function(name) {
+function Game(player1, player2) {
+  this.players = [player1, player2];
+  this.player1 = player1;
+  this.player2 = player2;
+}
+
+function Player(name) {
   this.name = name;
   this.score = 0;
 };
-
-Game = function(player1, player2) {
-  this.players = [player1, player2];
-}
 
 var rollDie = function() {
   return Math.ceil(Math.random() * 6);
@@ -30,7 +32,12 @@ $(document).ready(function() {
     var player1Name = $("input#player1NameInput").val();
     var player2Name = $("input#player2NameInput").val();
     var newGame = new Game(player1Name, player2Name);
-    console.log(newGame);
+    $("span#player1Name").text(newGame.player1);
+    $("span#player2Name").text(newGame.player2);
+    $("#rollButton").show();
+    $("#holdButton").show();
+    $("#quitButton").show();
+    $("#startGame").hide();
   });
 
   $("button#rollButton").click(function(event) {
@@ -38,7 +45,6 @@ $(document).ready(function() {
       $("ol#currentTurn").empty();
     }
     var result = rollDie();
-    console.log(currentPlayer)
     if (result === 1) {
       $("span#currentPlayerDisplay").text(currentPlayer);
       $("ol#currentTurn").append("<li>" + result + "</li>  <h3>Too Greedy, score 0 this turn! Next player, you're up!</h3>");

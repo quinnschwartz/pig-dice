@@ -17,3 +17,19 @@ button {
 #playerNameInput {
   background-color: black;
 }
+
+#rollButton {
+  display: none;
+}
+
+#holdButton {
+  display: none;
+}
+/*
+#startGame {
+  display: none;
+}*/
+
+#quitButton {
+  display: none;
+}
