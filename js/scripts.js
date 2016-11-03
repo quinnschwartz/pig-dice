@@ -5,8 +5,6 @@
   var subTotal = 0;
   var player1Total = 0;
   var player2Total = 0;
-  var player3Total = 0;
-  var player4Total = 0;
   var currentPlayer = 1;
 
 //functions
@@ -16,8 +14,8 @@ Player = function(name) {
   this.score = 0;
 };
 
-Game = function(player1, player2, player3, player4) {
-  this.players = [player1, player2, player3, player4];
+Game = function(player1, player2) {
+  this.players = [player1, player2];
 }
 
 var rollDie = function() {
@@ -26,15 +24,12 @@ var rollDie = function() {
 
 //frontend
 $(document).ready(function() {
-
     $("form#startGame").submit(function(event) {
     event.preventDefault();
 
     var player1Name = $("input#player1NameInput").val();
     var player2Name = $("input#player2NameInput").val();
-    var player3Name = $("input#player3NameInput").val();
-    var player4Name = $("input#player4NameInput").val();
-    var newGame = new Game(player1Name, player2Name, player3Name, player4Name);
+    var newGame = new Game(player1Name, player2Name);
     console.log(newGame);
   });
 
@@ -50,7 +45,7 @@ $(document).ready(function() {
       subTotal = 0;
       currentPlayer += 1;
       $("span#currentTurnScore").text(subTotal);
-      if (currentPlayer > 4) {
+      if (currentPlayer > 2) {
         currentPlayer = 1;
       }
     } else {
@@ -70,30 +65,22 @@ $(document).ready(function() {
     } else if (currentPlayer === 2) {
       player2Total += subTotal;
       $("span#player2ScoreDisplay").text(player2Total);
-
-    } else if (currentPlayer === 3) {
-      player3Total += subTotal;
-      $("span#player3ScoreDisplay").text(player3Total);
-
-    } else if (currentPlayer === 4) {
-      player4Total += subTotal;
-      $("span#player4ScoreDisplay").text(player4Total);
     }
-  if (player1Total > 100 || player2Total > 100 || player3Total > 100 || player4Total > 100) {
-    alert("Player" + currentPlayer + "wins!");
+
+  if (player1Total > 100 || player2Total > 100) {
+    alert("Player" + " " + currentPlayer + " " + "wins!  Final score:" + " " + player1Total + " " + "(Player 1)," + " " + player2Total + " " + "(Player 2)");
     player1Total = 0;
     player2Total = 0;
-    player3Total = 0;
-    player4Total = 0;
+    $("ol#currentTurn").empty();
+    // $(subtotal).empty();
+    currentPlayer = 1;
     $("span#player1ScoreDisplay").text(player1Total);
     $("span#player2ScoreDisplay").text(player2Total);
-    $("span#player3ScoreDisplay").text(player3Total);
-    $("span#player4ScoreDisplay").text(player4Total);
     currentPlayer = 1;
   } else {
     currentPlayer += 1;
     subTotal = 0;
-    if (currentPlayer > 4) {
+    if (currentPlayer > 2) {
       currentPlayer = 1;
     }
   }
